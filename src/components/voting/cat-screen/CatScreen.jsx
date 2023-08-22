@@ -2,6 +2,7 @@
 import useVotingCats from '@/hooks/queries/useVotingCats'
 import styles from './cat-screen.module.css'
 import Image from 'next/image'
+import CatActions from './cat-actions/CatActions'
 
 const CatScreen = () => {
     const { getCat } = useVotingCats()
@@ -9,7 +10,7 @@ const CatScreen = () => {
     if (getCat.isLoading) {
         return null
     }
-    console.log(getCat.data)
+
     return (
         <div className={styles.container}>
             <div className={styles.picture}>
@@ -19,9 +20,10 @@ const CatScreen = () => {
                     src={getCat?.data[0].url}
                     width={getCat.data[0].width}
                     height={getCat.data[0].height}
+                    quality={100}
                 />
             </div>
-            <div className={styles.actions}></div>
+            <CatActions data={getCat.data[0]} />
         </div>
     )
 }
