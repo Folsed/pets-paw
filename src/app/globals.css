@@ -129,6 +129,13 @@ button {
     grid-template-columns: 665px 775px;
 }
 
-/* .dynamic-wrapper {
+.dynamic-wrapper {
     padding: 30px;
-} */
+    position: relative;
+}
+
+.navigation {
+    position: sticky;
+    top: 0;
+    align-self: start;
+}
