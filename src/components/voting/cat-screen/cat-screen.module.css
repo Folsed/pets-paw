@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+    height: 360px;
+}
+
+.picture {
+    object-fit: contain;
+    width: inherit;
+    height: inherit;
+}
