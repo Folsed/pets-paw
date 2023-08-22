@@ -1,8 +1,11 @@
+import Backward from '@/components/voting/backward/Backward'
 import styles from './page.module.css'
 
 const VotingPage = () => {
   return (
-    <div>voting</div>
+    <div className={styles.container}>
+        <Backward currentPath={'voting'} />
+    </div>
   )
 }
 
