@@ -1,0 +1,54 @@
+.container {
+    padding: 30px 146px 0 73px;
+    
+}
+
+.logo {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.helloContainer {
+    margin-top: 84px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.heading h1 {
+    font-size: 44px;
+    font-weight: 500;
+    display: flex;
+}
+
+.heading span {
+    color: var(--grey-color);
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.actionsHeading {
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+.cards {
+    display: flex;
+    gap: 16px;
+}
