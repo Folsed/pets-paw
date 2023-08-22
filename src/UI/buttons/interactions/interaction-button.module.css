@@ -1,6 +1,5 @@
 .container {
     background-color: var(--hover-button-color);
-    border-radius: 10px;
     fill: var(--inactive-font);
     transition: background-color .2s ease, fill .2s ease;
 }
@@ -10,3 +9,22 @@
     fill: var(--active-font);
 }
 
+.container svg {
+    width: inherit;
+    height: inherit;
+}
+
+.container.bigButton { 
+    background-color: var(--default-button-color);
+
+}
+
+.container.bigButton:hover {
+    fill: var(--inactive-font);
+    background-color: var(--hover-button-color);
+}
+
+.container.bigButton:active {
+    background-color: var(--active-button-color);
+    fill: var(--active-font);
+}

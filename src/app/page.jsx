@@ -7,13 +7,6 @@ export default function Home() {
         <main className={styles.homePageWrapper}>
             <div className={styles.canvas}></div>
             <div className={styles.girlAndPet}>
-                {/* <Image
-                    src={girlAndPet}
-                    alt='Girl with her pet'
-                    quality={100}
-                    width={775}
-                    height={900}
-                /> */}
                 <GirlAndPet/>
             </div>
         </main>
