@@ -5,7 +5,7 @@ const Loader = ({ size }) => {
 
     return (
         <div
-            class={styles.loader}
+            className={styles.loader}
             style={{
                 width: `${finishedSize.width}px`,
                 height: `${finishedSize.height}px`,
