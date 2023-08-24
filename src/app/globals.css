@@ -130,7 +130,7 @@ button {
 }
 
 .dynamic-wrapper {
-    padding: 30px;
+    padding: 30px 30px 30px 65px;
     position: relative;
 }
 

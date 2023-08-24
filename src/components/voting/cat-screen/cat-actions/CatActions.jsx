@@ -5,24 +5,27 @@ import HeartIcon from '@/assets/svgs/icons/heart.svg'
 import FullHeartIcon from '@/assets/svgs/icons/fullHeart.svg'
 import DislikeIcon from '@/assets/svgs/icons/dislike.svg'
 import useVotingCats from '@/hooks/queries/useVotingCats'
+import { useState } from 'react'
 
 const CatActions = ({ data }) => {
-    const { likeOrDislike, favourites } = useVotingCats()
+    const { likeOrDislike, favourites, favouritesDelete } = useVotingCats(data.id)
 
     const handleLikeOrDis = (value) => {
         const formData = {
             image_id: data.id,
             value: value,
         }
-
         likeOrDislike.mutate(formData)
-        favourites.isSuccess = false
     }
 
     const handleFavourites = () => {
-        favourites.mutate({
-            image_id: data.id,
-        })
+        if (favourites.status === 'success') {
+            favouritesDelete.mutate()
+        } else {
+            favourites.mutate({
+                image_id: data.id,
+            })
+        }
     }
 
     return (
@@ -38,12 +41,15 @@ const CatActions = ({ data }) => {
                     className={`${styles.actionButton} ${styles.heart}`}
                     onClick={handleFavourites}
                 >
-                    {favourites.isSuccess ? <FullHeartIcon /> : <HeartIcon />}
+                    {favourites.status === 'success' ? (
+                        <FullHeartIcon />
+                    ) : (
+                        <HeartIcon />
+                    )}
                 </button>
                 <button
                     className={`${styles.actionButton} ${styles.dislike}`}
                     onClick={() => handleLikeOrDis(-1)}
-                    title='ЯК МОЖНА НЕ ЛЮБИТИ КОШЕНЯТ?????'
                 >
                     <DislikeIcon />
                 </button>

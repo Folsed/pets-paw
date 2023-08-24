@@ -3,6 +3,9 @@
     height: 360px;
     margin-top: 20px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .picture {
