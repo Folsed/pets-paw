@@ -15,7 +15,7 @@ const BreedsScreen = () => {
     // }
 
     return (
-        <React.Fragment>
+        <>
             <div className={styles.tools}>
                 <Backward currentPath='breeds' />
                 <SelectInput
@@ -31,7 +31,7 @@ const BreedsScreen = () => {
                     breed={breed?.value}
                 />
             </div>
-        </React.Fragment>
+        </>
     )
 }
 

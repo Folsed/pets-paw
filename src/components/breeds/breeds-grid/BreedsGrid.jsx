@@ -2,62 +2,49 @@
 import useBreeds from '@/hooks/queries/useBreeds'
 import Image from 'next/image'
 import styles from './breeds-grid.module.css'
+import Loader from '@/UI/loaders/Loader'
+import React from 'react'
 
 const BreedsGrid = ({ breed, allBreeds }) => {
     const { getCatsByBreed } = useBreeds(breed)
 
     const cats = allBreeds ? allBreeds : getCatsByBreed
-    console.log(cats)
-
-    if (cats.isLoading) {
-        return null
-    }
 
     return (
-        <div className={styles.gridContainer}>
-            {cats.data.map((item, index) => (
-                <div
-                    key={item.id}
-                    className={`${styles.gridCell}`}
-                >
-                    {item.image?.url || item.url ? (
-                        <Image
-                            src={item.image?.url || item.url || ''}
-                            alt={
-                                item.name || item.breeds.name || 'Just a kitty'
-                            }
-                            width={item.image?.width || item.width}
-                            height={item.image?.height || item.height}
-                            priority
-                        />
-                    ) : (
-                        ''
-                    )}
+        <>
+            {cats.isLoading ? (
+                <div className={styles.contentIsLoading}>
+                    <Loader size={50} />
                 </div>
-            ))}
-            {/* {cats.data.map((item, index) => (
-                <div
-                    key={item.id}
-                    className={`${styles.item} ${
-                        styles[`cell_${(index % 10) + 1}`]
-                    }`}
-                >
-                    {item.image?.url || item.url ? (
-                        <Image
-                            src={item.image?.url || item.url || ''}
-                            alt={
-                                item.name || item.breeds.name || 'Just a kitty'
-                            }
-                            width={item.image?.width}
-                            height={item.image?.height}
-                            priority
-                        />
-                    ) : (
-                        ''
-                    )}
+            ) : (
+                <div className={styles.gridContainer}>
+                    {cats.data.map((item) => (
+                        <React.Fragment key={item.id}>
+                            {item.image?.url || item.url ? (
+                                <div
+                                    className={`${styles.gridCell}`}
+                                >
+                                    <Image
+                                        // quality={50}
+                                        src={item.image?.url || item.url || ''}
+                                        alt={
+                                            item.name ||
+                                            item.breeds.name ||
+                                            'Just a kitty'
+                                        }
+                                        width={500}
+                                        height={500}
+                                        priority
+                                    />
+                                </div>
+                            ) : (
+                                ''
+                            )}
+                        </React.Fragment>
+                    ))}
                 </div>
-            ))} */}
-        </div>
+            )}
+        </>
     )
 }
 
