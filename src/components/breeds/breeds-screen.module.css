@@ -1,8 +1,30 @@
 .tools {
     display: flex;
+    justify-content: space-between;
     gap: 10px;
 }
 
 .content {
     margin-top: 20px;
+}
+
+.sortingButton {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    width: 40px;
+    border: 2px solid transparent;
+    transition: border .2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sortingButton:hover {
+    border: 2px solid #fbe0dc;
+}
+
+.sortingButton svg {
+    fill: var(--grey-color);
+    width: 18.47px;
+    height: 20px;
 }

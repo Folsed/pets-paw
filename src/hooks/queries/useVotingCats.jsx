@@ -83,27 +83,26 @@ const useVotingCats = (image_id) => {
         }
     )
 
-    const getMyCats = useQueries([
-        {
-            queryKey: ['get-like-or-dislike-cats'],
-            queryFn: async () =>
-                await axiosClient.get(`/votes?order=DESC&limit=4`),
-            select: ({ data }) => data,
-        },
-        {
-            queryKey: ['get-favourites-cats'],
-            queryFn: async () =>
-                await axiosClient.get(`/favourites?order=DESC&limit=4`),
-            select: ({ data }) => data,
-        },
-    ])
+    // const getMyCats = useQueries([
+    //     {
+    //         queryKey: ['get-like-or-dislike-cats'],
+    //         queryFn: async () =>
+    //             await axiosClient.get(`/votes?order=DESC&limit=4`),
+    //         select: ({ data }) => data,
+    //     },
+    //     {
+    //         queryKey: ['get-favourites-cats'],
+    //         queryFn: async () =>
+    //             await axiosClient.get(`/favourites?order=DESC&limit=4`),
+    //         select: ({ data }) => data,
+    //     },
+    // ])
 
     return {
         getCat,
         likeOrDislike,
         favourites,
         favouritesDelete,
-        getMyCats,
     }
 }
 

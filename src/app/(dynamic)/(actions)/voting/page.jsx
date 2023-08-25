@@ -12,7 +12,7 @@ const VotingPage = () => {
     return (
         <div className={styles.container}>
             <LogsContext.Provider value={{ userLogs, setUserLogs }}>
-                <Backward currentPath={'voting'} />
+                <Backward to={'/'} />
                 <CatScreen />
                 <CatLogging />
             </LogsContext.Provider>

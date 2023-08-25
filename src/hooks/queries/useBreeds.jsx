@@ -2,7 +2,7 @@ import axiosClient from '@/axios'
 import React from 'react'
 import { useQuery } from 'react-query'
 
-const useBreeds = (breed) => {
+const useBreeds = (breed, limit) => {
     const getBreeds = useQuery(
         ['get-breeds'],
         () => axiosClient.get(`breeds`),
@@ -14,7 +14,7 @@ const useBreeds = (breed) => {
     const getCatsByBreed = useQuery(
         ['get-cats-by-breed', breed],
         () =>
-            axiosClient.get(`/images/search?breed_ids=${breed}&limit=20`),
+            axiosClient.get(`/images/search?breed_ids=${breed}&limit=${limit}`),
         {
             select: ({ data }) => data,
             enabled: !!breed,
