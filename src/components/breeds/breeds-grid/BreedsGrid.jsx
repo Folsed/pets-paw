@@ -20,15 +20,17 @@ const BreedsGrid = ({ breed, allBreeds, gridLimit, orderBy }) => {
         )
     }
 
-    const sortedCats = [...cats.data].sort((a, b) => {
-        return orderBy === 'asc'
-            ? a.name?.localeCompare(b.name)
-            : b.name?.localeCompare(a.name)
-    })
+    const sortedCats = [...cats.data]
+        .slice(0, gridLimit?.value)
+        .sort((a, b) => {
+            return orderBy === 'asc'
+                ? a.name?.localeCompare(b.name)
+                : b.name?.localeCompare(a.name)
+        })
 
     return (
         <div className={styles.gridContainer}>
-            {sortedCats.slice(0, gridLimit?.value).map((item) => (
+            {sortedCats.map((item) => (
                 <React.Fragment key={item.id}>
                     {item.image?.url || item.url ? (
                         <div
@@ -40,7 +42,7 @@ const BreedsGrid = ({ breed, allBreeds, gridLimit, orderBy }) => {
                                 src={item.image?.url || item.url || ''}
                                 alt={
                                     item.name ||
-                                    item.breeds.name ||
+                                    item.breeds[0].name ||
                                     'Just a kitty'
                                 }
                                 width={500}
@@ -54,10 +56,15 @@ const BreedsGrid = ({ breed, allBreeds, gridLimit, orderBy }) => {
                                         : ''
                                 }`}
                             >
-                                <Link href={`/breeds/${item.id}`} className={styles.textBox}>
+                                <Link
+                                    href={`/breeds/${
+                                        allBreeds ? item.id : item.breeds[0].id
+                                    }`}
+                                    className={styles.textBox}
+                                >
                                     <span>
                                         {item.name ||
-                                            item.breeds.name ||
+                                            item.breeds[0].name ||
                                             'Just a kitty'}
                                     </span>
                                 </Link>

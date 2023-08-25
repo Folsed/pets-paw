@@ -12,7 +12,7 @@ const useBreeds = (breed, limit) => {
     )
 
     const getCatsByBreed = useQuery(
-        ['get-cats-by-breed', breed],
+        ['get-cats-by-breed', breed, limit],
         () =>
             axiosClient.get(`/images/search?breed_ids=${breed}&limit=${limit}`),
         {

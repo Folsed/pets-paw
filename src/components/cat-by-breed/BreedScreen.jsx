@@ -10,7 +10,11 @@ const BreedScreen = ({ breedId }) => {
     console.log(getCatsByBreed)
 
     if (getCatsByBreed.isLoading) {
-        return <Loader size={50} />
+        return (
+            <div className={styles.contentIsLoading}>
+                <Loader size={50} />
+            </div>
+        )
     }
 
     const catsImages = [
@@ -18,7 +22,7 @@ const BreedScreen = ({ breedId }) => {
             id: image.id,
             image: image.url,
             width: image.width,
-            height: image.height
+            height: image.height,
         })) || []),
     ]
 

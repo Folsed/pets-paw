@@ -1,0 +1,55 @@
+.container {
+    margin-top: 51px;
+    border: 2px solid #FBE0DC;
+    border-radius: var(--default-radius);
+    width: 100%;
+    padding: 26px 40px 40px 40px;
+    position: relative;
+}
+
+.heading {
+    position: absolute;
+    top: -31px;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    font-size: 36px;
+    font-weight: 500;
+    padding: 5px 40px;
+    background-color: var(--box-color);
+    border-radius: var(--default-radius);
+
+}
+
+.catDescription {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--grey-color);
+}
+
+.catProperties {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.catProperties span {
+    color: var(--grey-color);
+}
+
+.leftSection {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.rightSection {
+    flex: 1;
+}
+
+.catProp {
+    margin-top: 10px;
+}
+
