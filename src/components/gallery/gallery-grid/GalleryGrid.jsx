@@ -40,6 +40,7 @@ const GalleryGrid = ({ cats, gridLimit, orderBy, breed, mime }) => {
         return <Loader size={50} withContainer />
     }
 
+
     return (
         <GridPattern>
             {sortedCats.map((item) => (

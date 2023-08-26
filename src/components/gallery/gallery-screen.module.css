@@ -31,3 +31,13 @@
     text-transform: uppercase;
     padding-left: 10px;
 }
+
+.oneLine {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.oneLine div:first-child {
+    width: 100%;
+}
