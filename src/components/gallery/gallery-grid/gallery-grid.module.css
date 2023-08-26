@@ -1,0 +1,22 @@
+.hiddenContent {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.isActive {
+    background-color: #ff878f99;
+    opacity: 1;
+}
+
+.textBox {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: fit-content;
+}

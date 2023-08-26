@@ -10,6 +10,8 @@ const GalleryScreen = () => {
     const [orderBy, setOrderBy] = useState({ value: 'random', label: 'Random' })
     const [mime, setMime] = useState({ value: '', label: 'All' })
     const [breed, setBreed] = useState({ value: '', label: 'None' })
+    const [cellIsActive, setCellIsActive] = useState('')
+
     const [gridLimit, setGridLimit] = useState({
         value: 15,
         label: '15 items per page',
