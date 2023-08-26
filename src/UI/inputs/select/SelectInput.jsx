@@ -10,6 +10,7 @@ const SelectInput = ({
     defaultValue,
     styles,
     title,
+    white,
 }) => {
     return (
         <div style={styles} title={title}>
@@ -26,12 +27,16 @@ const SelectInput = ({
                     control: (baseStyles) => ({
                         ...baseStyles,
                         borderRadius: 10,
-                        backgroundColor: 'var(--background-color)',
+                        backgroundColor: white
+                            ? 'var(--box-color)'
+                            : 'var(--background-color)',
                         border: '2px solid transparent',
                         borderColor: 0,
                         boxShadow: 'none',
                         '&:hover': {
-                            backgroundColor: '#F8F8F7',
+                            backgroundColor: white
+                                ? 'var(--box-color)'
+                                : '#F8F8F7',
                             border: '2px solid #FBE0DC',
                         },
                         width: 'inherit',
@@ -54,7 +59,9 @@ const SelectInput = ({
 
                     singleValue: (baseStyles) => ({
                         ...baseStyles,
-                        color: 'var(--grey-color)',
+                        color: white
+                            ? 'var(--dark-color)'
+                            : 'var(--grey-color)',
                     }),
                     dropdownIndicator: (baseStyles) => ({
                         ...baseStyles,

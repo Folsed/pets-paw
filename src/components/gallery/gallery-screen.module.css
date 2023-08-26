@@ -1,10 +1,33 @@
 .sortingBox {
     width: 100%;
-    height: 156px;
     border-radius: var(--default-radius);
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px 20px 20px 20px;
 }
 
 .cats {
     margin-top: 20px;
+}
+
+
+.row {
+    display: flex;
+    flex: 1 1;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.rowItem {
+    width: 100%;
+}
+
+.rowItem span {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--grey-color);
+    text-transform: uppercase;
+    padding-left: 10px;
 }

@@ -48,30 +48,50 @@ const GalleryScreen = () => {
     return (
         <div className={styles.container}>
             <div className={styles.sortingBox}>
-                <SelectInput
-                    options={orderOptions}
-                    value={orderBy}
-                    setValue={setOrderBy}
-                    defaultValue={orderOptions[0]}
-                />
-                <SelectInput
-                    options={gridLimitOptions}
-                    value={gridLimit}
-                    setValue={setGridLimit}
-                    defaultValue={gridLimitOptions[2]}
-                />
-                <SelectInput
-                    options={breedOptions}
-                    value={breed}
-                    setValue={setBreed}
-                    defaultValue={breedOptions[0]}
-                />
-                <SelectInput
-                    options={mimeOptions}
-                    value={mime}
-                    setValue={setMime}
-                    defaultValue={mimeOptions[0]}
-                />
+                <div className={styles.row}>
+                    <div className={styles.rowItem}>
+                        <span>order</span>
+                        <SelectInput
+                            options={orderOptions}
+                            value={orderBy}
+                            setValue={setOrderBy}
+                            defaultValue={orderOptions[0]}
+                            white
+                        />
+                    </div>
+                    <div className={styles.rowItem}>
+                        <span>type</span>
+                        <SelectInput
+                            options={mimeOptions}
+                            value={mime}
+                            setValue={setMime}
+                            defaultValue={mimeOptions[0]}
+                            white
+                        />
+                    </div>
+                </div>
+                <div className={styles.row}>
+                    <div className={styles.rowItem}>
+                        <span>breed</span>
+                        <SelectInput
+                            options={breedOptions}
+                            value={breed}
+                            setValue={setBreed}
+                            defaultValue={breedOptions[0]}
+                            white
+                        />
+                    </div>
+                    <div className={styles.rowItem}>
+                        <span>limit</span>
+                        <SelectInput
+                            options={gridLimitOptions}
+                            value={gridLimit}
+                            setValue={setGridLimit}
+                            defaultValue={gridLimitOptions[2]}
+                            white
+                        />
+                    </div>
+                </div>
             </div>
 
             <div className={styles.cats}>
