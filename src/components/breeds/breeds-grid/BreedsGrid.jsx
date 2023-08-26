@@ -5,6 +5,8 @@ import styles from './breeds-grid.module.css'
 import Loader from '@/UI/loaders/Loader'
 import React, { useState } from 'react'
 import Link from 'next/link'
+import GridPattern from '@/components/modules/grid-pattern/GridPattern'
+import GridCell from '@/components/modules/grid-pattern/GridCell'
 
 const BreedsGrid = ({ breed, allBreeds, gridLimit, orderBy }) => {
     const { getCatsByBreed } = useBreeds(breed, 20)
@@ -29,12 +31,11 @@ const BreedsGrid = ({ breed, allBreeds, gridLimit, orderBy }) => {
         })
 
     return (
-        <div className={styles.gridContainer}>
+        <GridPattern>
             {sortedCats.map((item) => (
                 <React.Fragment key={item.id}>
                     {item.image?.url || item.url ? (
-                        <div
-                            className={`${styles.gridCell}`}
+                        <GridCell
                             onMouseEnter={() => setCellIsActive(item.id)}
                             onMouseLeave={() => setCellIsActive('')}
                         >
@@ -69,13 +70,13 @@ const BreedsGrid = ({ breed, allBreeds, gridLimit, orderBy }) => {
                                     </span>
                                 </Link>
                             </div>
-                        </div>
+                        </GridCell>
                     ) : (
                         ''
                     )}
                 </React.Fragment>
             ))}
-        </div>
+        </GridPattern>
     )
 }
 
