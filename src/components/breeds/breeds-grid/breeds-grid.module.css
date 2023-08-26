@@ -67,14 +67,6 @@
     grid-column: 3;
 }
 
-.contentIsLoading {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .hiddenContent {
     position: absolute;
     top: 0;

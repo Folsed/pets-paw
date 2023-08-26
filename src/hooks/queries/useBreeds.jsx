@@ -5,7 +5,7 @@ import { useQuery } from 'react-query'
 const useBreeds = (breed, limit) => {
     const getBreeds = useQuery(
         ['get-breeds'],
-        () => axiosClient.get(`breeds`),
+        () => axiosClient.get(`/breeds`),
         {
             select: ({ data }) => data,
         }

@@ -8,29 +8,27 @@ import Loader from '@/UI/loaders/Loader'
 const CatScreen = ({ setUserLogs, userLogs }) => {
     const { getCat } = useVotingCats()
 
+    if (getCat.isLoading) {
+        return <Loader size={50} withContainer />
+    }
+
     return (
         <div className={styles.container}>
-            {getCat.isLoading ? (
-                <Loader size={50} />
-            ) : (
-                <>
-                    <div className={styles.picture}>
-                        <Image
-                            alt='Kitty'
-                            priority={true}
-                            src={getCat?.data[0].url}
-                            width={getCat.data[0].width}
-                            height={getCat.data[0].height}
-                            quality={100}
-                        />
-                    </div>
-                    <CatActions
-                        data={getCat.data[0]}
-                        setUserLogs={setUserLogs}
-                        userLogs={userLogs}
-                    />
-                </>
-            )}
+            <div className={styles.picture}>
+                <Image
+                    alt='Kitty'
+                    priority={true}
+                    src={getCat?.data[0].url}
+                    width={getCat.data[0].width}
+                    height={getCat.data[0].height}
+                    quality={100}
+                />
+            </div>
+            <CatActions
+                data={getCat.data[0]}
+                setUserLogs={setUserLogs}
+                userLogs={userLogs}
+            />
         </div>
     )
 }

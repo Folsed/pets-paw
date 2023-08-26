@@ -15,11 +15,7 @@ const BreedsGrid = ({ breed, allBreeds, gridLimit, orderBy }) => {
     const cats = allBreeds ? allBreeds : getCatsByBreed
 
     if (cats.isLoading) {
-        return (
-            <div className={styles.contentIsLoading}>
-                <Loader size={50} />
-            </div>
-        )
+        return <Loader size={50} withContainer />
     }
 
     const sortedCats = [...cats.data]
