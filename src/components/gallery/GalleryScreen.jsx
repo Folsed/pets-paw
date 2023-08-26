@@ -5,6 +5,8 @@ import styles from './gallery-screen.module.css'
 import useGallery from '@/hooks/queries/useGallery'
 import SelectInput from '@/UI/inputs/select/SelectInput'
 import useBreeds from '@/hooks/queries/useBreeds'
+import InteractionButton from '@/UI/buttons/interactions/InteractionButton'
+import RefreshIcon from '@/assets/svgs/icons/refresh.svg'
 
 const GalleryScreen = () => {
     const [orderBy, setOrderBy] = useState({ value: 'asc', label: 'Asc' })
@@ -19,7 +21,6 @@ const GalleryScreen = () => {
 
     const { getCats } = useGallery()
     const { getBreeds } = useBreeds()
-
 
     const orderOptions = [
         { value: 'random', label: 'Random' },
@@ -47,6 +48,12 @@ const GalleryScreen = () => {
         { value: 'gif', label: 'Animated' },
         { value: 'jpg.png.webp.jpeg', label: 'Static' },
     ]
+
+    const handleRefresh = () => {
+        getCats.remove()
+        getCats.refetch()
+    }
+
 
     return (
         <div className={styles.container}>
@@ -86,13 +93,22 @@ const GalleryScreen = () => {
                     </div>
                     <div className={styles.rowItem}>
                         <span>limit</span>
-                        <SelectInput
-                            options={gridLimitOptions}
-                            value={gridLimit}
-                            setValue={setGridLimit}
-                            defaultValue={gridLimitOptions[2]}
-                            white
-                        />
+                        <div className={styles.oneLine}>
+                            <SelectInput
+                                options={gridLimitOptions}
+                                value={gridLimit}
+                                setValue={setGridLimit}
+                                defaultValue={gridLimitOptions[2]}
+                                white
+                            />
+                            <InteractionButton
+                                icon={<RefreshIcon />}
+                                padding={10}
+                                bigButton
+                                onClick={() => handleRefresh()}
+                                size={20}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
