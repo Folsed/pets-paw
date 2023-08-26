@@ -9,3 +9,35 @@
 .content {
     margin-top: 20px;
 }
+
+.tools {
+    display: flex;
+    justify-content: space-between;
+}
+
+.uploadLink {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 12px 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--hover-button-color);
+    fill: var(--inactive-font);
+    color: var(--inactive-font);
+    letter-spacing: 2px;
+    transition: background-color .2s ease, fill .2s ease, color .2s ease;
+}
+
+.uploadLink:hover {
+    background-color: var(--active-button-color);
+    fill: var(--active-font);
+    color: var(--active-font);
+}
+
+.uploadLink svg {
+    width: 16px;
+    height: 16px;
+}

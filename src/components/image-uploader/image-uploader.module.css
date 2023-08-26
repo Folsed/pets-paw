@@ -1,0 +1,40 @@
+.uploaderBox {
+    width: 100%;
+    height: 320px;
+    border: 2px dashed var(--hover-button-color);
+    border-radius: var(--default-radius);
+    background-color: var(--box-color);
+}
+
+.fileUploader {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px 40px;
+}
+
+.fileUploader span {
+    user-select: none;
+    z-index: 1;
+}
+
+.uploaderIcon {
+    position: absolute;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    text-decoration: underline;
+}
+
+.uploadedImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}

@@ -7,7 +7,7 @@ import SelectInput from '@/UI/inputs/select/SelectInput'
 import useBreeds from '@/hooks/queries/useBreeds'
 
 const GalleryScreen = () => {
-    const [orderBy, setOrderBy] = useState({ value: 'random', label: 'Random' })
+    const [orderBy, setOrderBy] = useState({ value: 'asc', label: 'Asc' })
     const [mime, setMime] = useState({ value: '', label: 'All' })
     const [breed, setBreed] = useState({ value: '', label: 'None' })
     const [cellIsActive, setCellIsActive] = useState('')
@@ -19,6 +19,7 @@ const GalleryScreen = () => {
 
     const { getCats } = useGallery()
     const { getBreeds } = useBreeds()
+
 
     const orderOptions = [
         { value: 'random', label: 'Random' },

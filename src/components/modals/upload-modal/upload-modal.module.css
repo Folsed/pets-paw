@@ -1,0 +1,78 @@
+.modalWindow {
+    background-color: var(--background-color);
+    position: absolute;
+    top: 30px;
+    left: 65px;
+    right: 30px;
+    /* bottom: 30px; */
+    border-radius: var(--default-radius);
+    z-index: 2;
+    padding: 100px 20px 30px 20px;
+}
+
+.blackout {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1d1d1d99;
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading h3 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.heading span {
+    font-size: 20px;
+    color: var(--grey-color);
+}
+
+.exitButton {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    padding: 11.5px;
+    border-radius: 10px;
+    background-color: var(--box-color);
+    fill: var(--inactive-font);
+    top: 20px;
+    right: 20px;
+    transition: background-color .2s ease, fill .2s ease;
+}
+
+.exitButton:hover {
+    background-color: var(--active-button-color);
+    fill: var(--active-font);
+}
+
+.exitButton svg {
+    width: 17px;
+    height: 17px;
+}
+
+.uploadContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.filename {
+    font-size: 20px;
+    color: var(--inactive-font);
+}

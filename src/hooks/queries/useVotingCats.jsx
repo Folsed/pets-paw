@@ -41,6 +41,14 @@ const useVotingCats = (image_id) => {
         }
     )
 
+    const getFavourites = useQuery(
+        ['get-favourites'],
+        () => axiosClient.get(`/favourites?order=DESC`),
+        {
+            select: ({ data }) => data,
+        }
+    )
+
     const favourites = useMutation(
         ['favourites-cats'],
         (formData) => {
@@ -48,6 +56,7 @@ const useVotingCats = (image_id) => {
         },
         {
             onSuccess: ({ data }) => {
+                getFavourites.refetch()
                 setFavId(data.id)
                 setUserLogs((prevLogs) => [
                     {
@@ -69,6 +78,7 @@ const useVotingCats = (image_id) => {
         },
         {
             onSuccess: ({ data }) => {
+                getFavourites.refetch()
                 favourites.reset()
                 setUserLogs((prevLogs) => [
                     {
@@ -86,6 +96,7 @@ const useVotingCats = (image_id) => {
     return {
         getCat,
         likeOrDislike,
+        getFavourites,
         favourites,
         favouritesDelete,
     }

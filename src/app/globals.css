@@ -133,6 +133,7 @@ button {
 .dynamic-wrapper {
     padding: 30px 30px 30px 65px;
     position: relative;
+    height: 100%;
 }
 
 .navigation {
