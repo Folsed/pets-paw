@@ -1,34 +1,30 @@
-import { useEffect, useRef, useState } from 'react'
+'use client'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import ImageUploaderIcon from '@/assets/svgs/icons/imageUploader.svg'
 import Image from 'next/image'
 import styles from './image-uploader.module.css'
+import { useDropzone } from 'react-dropzone'
 
 const ImageUploader = ({ name, className, placeholder, image, setImage }) => {
     const imageInputRef = useRef()
     const [preview, setPreview] = useState(null)
 
-    const handleFileChange = (event) => {
-        const file = event.target.files[0]
-        if (file) {
-            setPreview(URL.createObjectURL(file))
-            setImage(file)
-        }
-    }
+    const onDrop = useCallback(
+        (acceptedFiles) => {
+            const file = new FileReader()
 
-    const handleFileDestroy = () => {
-        setImage(null)
-        imageInputRef.current.value = ''
-    }
+            file.onload = () => {
+                setPreview(file.result)
+                setImage(acceptedFiles[0])
+            }
+            file.readAsDataURL(acceptedFiles[0])
+        },
+        [setImage]
+    )
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+        onDrop,
+    })
 
-    const handleUploaderClick = () => {
-        if (!image && imageInputRef.current) {
-            imageInputRef.current.click()
-        }
-    }
-
-    useEffect(() => {
-        imageInputRef.current.value = ''
-    }, [image])
 
     return (
         <div className={styles.uploaderBox}>
@@ -36,15 +32,16 @@ const ImageUploader = ({ name, className, placeholder, image, setImage }) => {
                 className={`${styles.fileUploader} ${
                     className ? className : ''
                 }`}
+                {...getRootProps()}
             >
                 <input
+                    {...getInputProps}
                     type='file'
                     accept='image/*'
                     id='file-uploader'
                     name={name}
                     hidden
                     ref={imageInputRef}
-                    onChange={handleFileChange}
                 />
                 {image ? (
                     <Image
@@ -56,16 +53,20 @@ const ImageUploader = ({ name, className, placeholder, image, setImage }) => {
                     />
                 ) : (
                     <>
-                        <span>
-                            <strong>Drag here </strong>your file or{' '}
-                            <strong
-                                className={styles.clickable}
-                                onClick={handleUploaderClick}
-                            >
-                                Click here{' '}
-                            </strong>{' '}
-                            to upload
-                        </span>
+                        {isDragActive ? (
+                            <span>Drop the files here ...</span>
+                        ) : (
+                            <span>
+                                <strong>Drag here </strong>your file or{' '}
+                                <strong
+                                    className={styles.clickable}
+                                >
+                                    Click here{' '}
+                                </strong>{' '}
+                                to upload
+                            </span>
+                        )}
+
                         <ImageUploaderIcon
                             fill='#dadada'
                             className={styles.uploaderIcon}

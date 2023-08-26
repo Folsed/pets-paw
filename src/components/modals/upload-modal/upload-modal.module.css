@@ -4,7 +4,7 @@
     top: 30px;
     left: 65px;
     right: 30px;
-    /* bottom: 30px; */
+    height: 810px;
     border-radius: var(--default-radius);
     z-index: 2;
     padding: 100px 20px 30px 20px;
@@ -75,4 +75,41 @@
 .filename {
     font-size: 20px;
     color: var(--inactive-font);
+}
+
+.submitButton {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 12px 30px;
+    border-radius: 10px;
+    background-color: var(--active-button-color);
+    color: var(--active-font);
+    letter-spacing: 2px;
+    transition: background-color .2s ease, color .2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.submitButton:hover {
+    background-color: var(--hover-button-color);
+    color: var(--inactive-font);
+}
+
+.submitButton.loadingButton {
+    background-color: var(--active-button-color);
+    color: var(--active-font);
+    cursor:auto;
+}
+
+.statusBox {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--inactive-font);
+    background-color: var(--box-color);
+    border-radius: 10px;
 }

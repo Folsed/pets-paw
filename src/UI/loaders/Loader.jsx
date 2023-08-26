@@ -1,6 +1,6 @@
 import styles from './loader.module.css'
 
-const Loader = ({ size, withContainer }) => {
+const Loader = ({ size, withContainer, dotsSize, color }) => {
     const finishedSize = { width: size, height: size }
 
     return (
