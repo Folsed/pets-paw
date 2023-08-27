@@ -1,3 +1,4 @@
+
 .modalWindow {
     background-color: var(--background-color);
     position: absolute;
@@ -8,6 +9,9 @@
     border-radius: var(--default-radius);
     z-index: 2;
     padding: 100px 20px 30px 20px;
+}
+body[data-theme='dark'] .modalWindow {
+    background-color: #282828;
 }
 
 .blackout {

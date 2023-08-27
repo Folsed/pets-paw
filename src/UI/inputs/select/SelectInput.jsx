@@ -36,7 +36,7 @@ const SelectInput = ({
                         '&:hover': {
                             backgroundColor: white
                                 ? 'var(--box-color)'
-                                : '#F8F8F7',
+                                : 'var(--background-color)',
                             border: '2px solid #FBE0DC',
                         },
                         width: 'inherit',
@@ -66,6 +66,15 @@ const SelectInput = ({
                     dropdownIndicator: (baseStyles) => ({
                         ...baseStyles,
                         padding: 0,
+                    }),
+                    menu: (baseStyles) => ({
+                        ...baseStyles,
+                        backgroundColor: white
+                            ? 'var(--box-color)'
+                            : 'var(--background-color)',
+                        color: white
+                            ? 'var(--dark-color)'
+                            : 'var(--grey-color)',
                     }),
                 }}
             />

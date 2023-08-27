@@ -11,7 +11,7 @@ const VotingPage = () => {
 
     return (
         <>
-            <LogsContext.Provider value={{ userLogs, setUserLogs }}>
+            <LogsContext.Provider value={{ userLogs: userLogs, setUserLogs: setUserLogs }}>
                 <Backward to={'/'} />
                 <CatScreen />
                 <CatLogging />

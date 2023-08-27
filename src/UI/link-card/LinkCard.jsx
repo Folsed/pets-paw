@@ -18,6 +18,8 @@ const LinkCard = ({ props }) => {
                     src={props.picture}
                     alt={`Cats ${props.title}`}
                     quality={100}
+                    width={props.picture.width}
+                    height={props.picture.height}
                 />
             </div>
             <div>

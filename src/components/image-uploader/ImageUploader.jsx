@@ -68,7 +68,7 @@ const ImageUploader = ({ name, className, placeholder, image, setImage }) => {
                         )}
 
                         <ImageUploaderIcon
-                            fill='#dadada'
+                            fill='var(--uploader-icon)'
                             className={styles.uploaderIcon}
                         />
                     </>

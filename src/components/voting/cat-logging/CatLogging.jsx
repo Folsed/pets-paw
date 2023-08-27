@@ -9,7 +9,6 @@ import LogsContext from '@/providers/LogsProvider'
 
 const CatLogging = () => {
     const { userLogs } = useContext(LogsContext)
-    console.log(userLogs)
 
     return (
         <div className={styles.container}>

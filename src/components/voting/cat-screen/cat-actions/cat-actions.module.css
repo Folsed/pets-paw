@@ -10,7 +10,6 @@
     margin-right: auto;
     background-color: var(--box-color);
     border-radius: var(--default-radius);
-    /* padding: 3px; */
     border: 3px solid var(--box-color);
     overflow: hidden;
 }
@@ -29,6 +28,7 @@
     justify-content: center;
     align-items: center;
     fill: var(--active-font);
+    transition: fill 0.2s;
 }
 
 .actionButton svg {
@@ -48,14 +48,17 @@
 
 .like {
     background-color: #97eab9;
+    transition: background-color 0.2s;
 }
 
 .heart {
     background-color: #ff868e;
+    transition: background-color 0.2s;
 }
 
 .dislike {
     background-color: #ffd280;
+    transition: background-color 0.2s;
 }
 
 .like:hover {
@@ -72,4 +75,3 @@
     fill: #ffd280;
     background-color: rgba(255, 210, 128, 0.3);
 }
-

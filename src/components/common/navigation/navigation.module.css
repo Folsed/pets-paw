@@ -2,6 +2,11 @@
     padding: 38px 0 0 146px;
 }
 
+.heading {
+    display: flex;
+    justify-content: space-between;
+}
+
 .logo {
     display: flex;
     gap: 8px;

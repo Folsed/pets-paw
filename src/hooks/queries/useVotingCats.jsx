@@ -25,18 +25,9 @@ const useVotingCats = (image_id) => {
             return axiosClient.post('/votes', formData)
         },
         {
-            onSuccess: ({ data }) => {
+            onSuccess: () => {
                 getCat.refetch()
                 favourites.reset()
-                setUserLogs((prevLogs) => [
-                    {
-                        time: time,
-                        image_id: data.image_id,
-                        action: 'added',
-                        point: data.value === 1 ? 'Likes' : 'Dislikes',
-                    },
-                    ...prevLogs,
-                ])
             },
         }
     )
@@ -46,7 +37,7 @@ const useVotingCats = (image_id) => {
         () => axiosClient.get(`/favourites?order=DESC`),
         {
             select: ({ data }) => data,
-            refetchOnMount: true
+            refetchOnMount: true,
         }
     )
 
@@ -59,15 +50,7 @@ const useVotingCats = (image_id) => {
             onSuccess: ({ data }) => {
                 getFavourites.refetch()
                 setFavId(data.id)
-                setUserLogs((prevLogs) => [
-                    {
-                        time: time,
-                        image_id: image_id,
-                        action: 'added',
-                        point: 'Favourites',
-                    },
-                    ...prevLogs,
-                ])
+                favouritesDelete.reset()
             },
         }
     )
@@ -81,15 +64,6 @@ const useVotingCats = (image_id) => {
             onSuccess: ({ data }) => {
                 getFavourites.refetch()
                 favourites.reset()
-                setUserLogs((prevLogs) => [
-                    {
-                        time: time,
-                        image_id: image_id,
-                        action: 'removed',
-                        point: 'Favourites',
-                    },
-                    ...prevLogs,
-                ])
             },
         }
     )
