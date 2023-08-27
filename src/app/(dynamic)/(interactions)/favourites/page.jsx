@@ -1,9 +1,8 @@
+import Favourites from '@/components/interactions-content/favourites/Favourites'
 import React from 'react'
 
 const FavouritesPage = () => {
-  return (
-    <div>FavouritesPage</div>
-  )
+    return <Favourites />
 }
 
 export default FavouritesPage

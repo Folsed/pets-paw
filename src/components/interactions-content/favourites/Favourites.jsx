@@ -1,34 +1,63 @@
+'use client'
 import Loader from '@/UI/loaders/Loader'
 import GridCell from '@/components/modules/grid-pattern/GridCell'
 import GridPattern from '@/components/modules/grid-pattern/GridPattern'
 import useVotingCats from '@/hooks/queries/useVotingCats'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './favourites.module.css'
+import FullHeartIcon from '@/assets/svgs/icons/fullHeart.svg'
+import InteractionButton from '@/UI/buttons/interactions/InteractionButton'
+import useMyCats from '@/hooks/queries/useMyCats'
 
-const Likes = () => {
+const Favourites = () => {
     const { getFavourites } = useVotingCats()
+    const { favouritesDelete } = useMyCats()
+    const [cellIsActive, setCellIsActive] = useState('')
 
-    const filteredCats = myCats?.data?.filter((item) => item.value === 1)
-
-    if (myCats.isLoading) {
+    if (getFavourites.isLoading) {
         return <Loader size={50} withContainer />
+    }
+
+    const handleDelete = (id) => {
+        favouritesDelete.mutate(id)
     }
 
     return (
         <>
-            {filteredCats.length === 0 ? (
+            {getFavourites.data.length === 0 ? (
                 <div className={styles.notFoundItems}>No item found</div>
             ) : (
                 <GridPattern>
-                    {filteredCats.map((item) => (
-                        <GridCell key={item.id}>
+                    {getFavourites.data.map((item) => (
+                        <GridCell
+                            key={item.id}
+                            onMouseEnter={() => setCellIsActive(item.id)}
+                            onMouseLeave={() => setCellIsActive('')}
+                        >
                             <Image
                                 src={item.image.url}
-                                alt='My like cat'
+                                alt='My favourite cat'
                                 width={500}
                                 height={500}
                             />
+                            <div
+                                className={`${styles.hiddenContent} ${
+                                    cellIsActive === item.id
+                                        ? styles.isActive
+                                        : ''
+                                }`}
+                            >
+                                <div className={styles.textBox}>
+                                    <InteractionButton
+                                        icon={<FullHeartIcon />}
+                                        size={20}
+                                        padding={10}
+                                        bigButton
+                                        onClick={() => handleDelete(item.id)}
+                                    />
+                                </div>
+                            </div>
                         </GridCell>
                     ))}
                 </GridPattern>
@@ -37,4 +66,4 @@ const Likes = () => {
     )
 }
 
-export default Likes
+export default Favourites

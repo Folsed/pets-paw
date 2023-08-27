@@ -1,8 +1,11 @@
 import axiosClient from '@/axios'
 import React from 'react'
-import { useQuery } from 'react-query'
+import { useMutation, useQuery } from 'react-query'
+import useVotingCats from './useVotingCats'
 
 const useMyCats = () => {
+    const { getFavourites } = useVotingCats()
+
     const myCats = useQuery(
         ['my-likes'],
         () => {
@@ -10,11 +13,23 @@ const useMyCats = () => {
         },
         {
             select: ({ data }) => data,
-            refetchOnMount: true
+            refetchOnMount: true,
         }
     )
 
-    return { myCats }
+    const favouritesDelete = useMutation(
+        ['favourites-delete'],
+        (formData) => {
+            return axiosClient.delete(`/favourites/${formData}`)
+        },
+        {
+            onSuccess: () => {
+                getFavourites.refetch()
+            },
+        }
+    )
+
+    return { myCats, favouritesDelete }
 }
 
 export default useMyCats
