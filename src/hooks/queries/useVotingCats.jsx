@@ -46,6 +46,7 @@ const useVotingCats = (image_id) => {
         () => axiosClient.get(`/favourites?order=DESC`),
         {
             select: ({ data }) => data,
+            refetchOnMount: true
         }
     )
 

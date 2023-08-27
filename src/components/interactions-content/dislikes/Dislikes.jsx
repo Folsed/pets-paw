@@ -2,14 +2,14 @@
 import GridPattern from '@/components/modules/grid-pattern/GridPattern'
 import useMyCats from '@/hooks/queries/useMyCats'
 import GridCell from '@/components/modules/grid-pattern/GridCell'
+import styles from '../interactions.module.css'
 import Image from 'next/image'
 import Loader from '@/UI/loaders/Loader'
-import styles from '../interactions.module.css'
 
-const Likes = () => {
+const Dislikes = () => {
     const { myCats } = useMyCats()
 
-    const filteredCats = myCats?.data?.filter((item) => item.value === 1)
+    const filteredCats = myCats?.data?.filter((item) => item.value === -1)
 
     if (myCats.isLoading) {
         return <Loader size={50} withContainer />
@@ -37,4 +37,4 @@ const Likes = () => {
     )
 }
 
-export default Likes
+export default Dislikes

@@ -1,8 +1,9 @@
+import Dislikes from '@/components/interactions-content/dislikes/Dislikes'
 import React from 'react'
 
 const DislikesPage = () => {
   return (
-    <div>page</div>
+    <Dislikes/>
   )
 }
 

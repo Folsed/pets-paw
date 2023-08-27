@@ -1,11 +1,4 @@
-.container {
-    margin-top: 10px;
-    width: 100%;
-    background-color: var(--box-color);
-    border-radius: var(--default-radius);
-    padding: 20px;
-}
-
 .content {
     margin-top: 20px;
+    min-height: 640px;
 }

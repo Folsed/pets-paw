@@ -1,13 +1,13 @@
-'use client'
-import GridPattern from '@/components/modules/grid-pattern/GridPattern'
-import useMyCats from '@/hooks/queries/useMyCats'
-import GridCell from '@/components/modules/grid-pattern/GridCell'
-import Image from 'next/image'
 import Loader from '@/UI/loaders/Loader'
-import styles from '../interactions.module.css'
+import GridCell from '@/components/modules/grid-pattern/GridCell'
+import GridPattern from '@/components/modules/grid-pattern/GridPattern'
+import useVotingCats from '@/hooks/queries/useVotingCats'
+import Image from 'next/image'
+import React from 'react'
+import styles from './favourites.module.css'
 
 const Likes = () => {
-    const { myCats } = useMyCats()
+    const { getFavourites } = useVotingCats()
 
     const filteredCats = myCats?.data?.filter((item) => item.value === 1)
 
