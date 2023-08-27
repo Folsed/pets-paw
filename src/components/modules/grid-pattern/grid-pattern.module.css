@@ -67,7 +67,7 @@
     grid-column: 3;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 428px) {
     .gridContainer {
         display: flex;
         flex-direction: column;

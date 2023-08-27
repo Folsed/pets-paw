@@ -129,7 +129,7 @@ button {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 428px) {
     .dynamic-wrapper {
         padding: 20px;
     }

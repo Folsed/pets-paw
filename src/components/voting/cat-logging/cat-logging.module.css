@@ -39,7 +39,7 @@
     align-items: center;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 428px) {
     .leftText {
         display: grid;
         grid-template-areas:

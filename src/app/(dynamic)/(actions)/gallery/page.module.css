@@ -35,7 +35,7 @@
     height: 16px;
 }
 
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 428px) {
     .tools {
         flex-direction: column;
         gap: 10px;

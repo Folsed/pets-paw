@@ -117,3 +117,7 @@ body[data-theme='dark'] .modalWindow {
     background-color: var(--box-color);
     border-radius: 10px;
 }
+
+@media screen and (max-width: 375px) {
+    
+}
