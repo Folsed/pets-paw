@@ -4,6 +4,12 @@
     gap: 10px;
 }
 
+.sortings {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 .content {
     margin-top: 20px;
 }
@@ -13,10 +19,11 @@
     border-radius: 10px;
     width: 40px;
     border: 2px solid transparent;
-    transition: border .2s ease;
+    transition: border 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 8px;
 }
 
 .sortingButton:hover {
@@ -25,6 +32,31 @@
 
 .sortingButton svg {
     fill: var(--grey-color);
-    width: 18.47px;
+    width: 20px;
     height: 20px;
+}
+
+.breedsSelect {
+    width: 226px;
+}
+
+.bottomSection {
+    display: flex;
+    gap: 10px;
+}
+
+@media screen and (max-width: 375px) {
+    .tools {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sortings {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .breedsSelect {
+        width: 100%;
+    }
 }

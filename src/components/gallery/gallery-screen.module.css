@@ -41,3 +41,19 @@
 .oneLine div:first-child {
     width: 100%;
 }
+
+@media screen and (max-width: 375px) {
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .oneLine {
+        flex-direction: column;
+    }
+
+    .oneLine button {
+        display: flex;
+        justify-content: center;
+    }
+}

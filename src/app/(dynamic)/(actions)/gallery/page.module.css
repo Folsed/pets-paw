@@ -21,6 +21,7 @@
     color: var(--inactive-font);
     letter-spacing: 2px;
     transition: background-color .2s ease, fill .2s ease, color .2s ease;
+    justify-content: center;
 }
 
 .uploadLink:hover {
@@ -32,4 +33,11 @@
 .uploadLink svg {
     width: 16px;
     height: 16px;
+}
+
+@media screen and (max-width: 376px) {
+    .tools {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

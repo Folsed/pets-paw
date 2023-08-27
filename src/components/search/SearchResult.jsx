@@ -26,7 +26,7 @@ const SearchResult = () => {
                 <strong>{breed}</strong>
             </div>
             <GridPattern>
-                {searchByBreed.data.map((item) => (
+                {searchByBreed?.data?.map((item) => (
                     <GridCell
                         key={item.id}
                         onMouseEnter={() => setCellIsActive(item.id)}

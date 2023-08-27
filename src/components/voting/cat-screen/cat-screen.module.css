@@ -15,7 +15,14 @@
 }
 
 .picture img {
-    width: fit-content;
-    object-fit: contain;
     border-radius: 20px;
+    width: fit-content;
+    height: fit-content;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 375px){
+    .container {
+        height: 190px;
+    }
 }

@@ -20,13 +20,13 @@
     gap: 60px;
 }
 
-.heading h1 {
+.welcome h1 {
     font-size: 44px;
     font-weight: 500;
     display: flex;
 }
 
-.heading span {
+.welcome span {
     color: var(--grey-color);
     font-size: 20px;
     margin-top: 10px;
@@ -47,4 +47,32 @@
 .cards {
     display: flex;
     gap: 16px;
+}
+
+
+.inactive {
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 38px 146px 0 146px;
+    }
+
+    .welcome {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .container {
+        padding: 20px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+
 }

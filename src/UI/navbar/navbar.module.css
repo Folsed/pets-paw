@@ -1,0 +1,56 @@
+.container {
+    display: none;
+}
+
+.navbarButton {
+    height: 100%;
+}
+
+.navButton {
+    height: inherit;
+}
+
+.navbarButton svg {
+    margin-top: 5px;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--background-color);
+    z-index: 2;
+}
+
+.active {
+    display: block;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 110px;
+    gap: 16px;
+}
+
+.closeButton {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .cards {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+}

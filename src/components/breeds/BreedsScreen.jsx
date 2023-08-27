@@ -40,38 +40,42 @@ const BreedsScreen = () => {
         <>
             <div className={styles.tools}>
                 <Backward to='/' />
-                <SelectInput
-                    options={getBreeds.isLoading ? [] : breedsOptions}
-                    isLoading={getBreeds.isLoading}
-                    value={breed}
-                    setValue={setBreed}
-                    defaultValue={breedsOptions[0]}
-                    styles={{ width: '226px' }}
-                    title='Sorting by breeds'
-                />
-                <SelectInput
-                    options={gridLimit}
-                    value={gridItems}
-                    setValue={setGridItems}
-                    defaultValue={gridLimit[3]}
-                    styles={{ width: '101px' }}
-                    title='Limit for items grid'
-                />
-                <button
-                    className={styles.sortingButton}
-                    onClick={() => handleOrder('desc')}
-                    title='Sorting from Z to A'
-                >
-                    <SortingUpIcon />
-                </button>
+                <div className={styles.sortings}>
+                    <SelectInput
+                        options={getBreeds.isLoading ? [] : breedsOptions}
+                        isLoading={getBreeds.isLoading}
+                        value={breed}
+                        setValue={setBreed}
+                        defaultValue={breedsOptions[0]}
+                        title='Sorting by breeds'
+                        className={styles.breedsSelect}
+                    />
+                    <div className={styles.bottomSection}>
+                        <SelectInput
+                            options={gridLimit}
+                            value={gridItems}
+                            setValue={setGridItems}
+                            defaultValue={gridLimit[3]}
+                            styles={{ width: '101px' }}
+                            title='Limit for items grid'
+                        />
+                        <button
+                            className={styles.sortingButton}
+                            onClick={() => handleOrder('desc')}
+                            title='Sorting from Z to A'
+                        >
+                            <SortingUpIcon />
+                        </button>
 
-                <button
-                    className={styles.sortingButton}
-                    onClick={() => handleOrder('asc')}
-                    title='Sorting from A to Z'
-                >
-                    <SortingDownIcon />
-                </button>
+                        <button
+                            className={styles.sortingButton}
+                            onClick={() => handleOrder('asc')}
+                            title='Sorting from A to Z'
+                        >
+                            <SortingDownIcon />
+                        </button>
+                    </div>
+                </div>
             </div>
             <div className={styles.content}>
                 <BreedsGrid

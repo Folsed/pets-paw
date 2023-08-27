@@ -43,3 +43,10 @@
     background-color: var(--active-button-color);
     color: var(--active-font);
 }
+
+
+@media only screen and (max-width: 375px) {
+    .picture {
+        display: none;
+    }
+}

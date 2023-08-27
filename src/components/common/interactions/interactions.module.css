@@ -2,3 +2,41 @@
     display: flex;
     justify-content: space-between;
 }
+
+.myCats {
+    display: flex;
+    gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        gap: 10px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-areas:
+            'left-nav right-nav'
+            'search search';
+    }
+
+    .container div:first-child {
+        grid-area: left-nav;
+    }
+
+    .myCats {
+        grid-area: right-nav;
+
+    }
+
+    .container form {
+        grid-area: search;
+        width: 100%;
+    }
+}

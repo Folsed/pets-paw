@@ -38,14 +38,13 @@
 
 body {
     overflow-x: hidden;
-    width: 100vw;
+    width: 100%;
 }
 
 body {
     background-color: var(--background-color);
     color: var(--dark-color);
-    transition: all .2s;
-
+    transition: all 0.2s;
 }
 
 a {
@@ -118,4 +117,20 @@ button {
     position: sticky;
     top: 0;
     align-self: start;
+}
+
+@media only screen and (max-width: 768px) {
+    .content {
+        grid-template-columns: 100%;
+    }
+
+    .dynamic-wrapper {
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .dynamic-wrapper {
+        padding: 20px;
+    }
 }

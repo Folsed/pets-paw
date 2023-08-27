@@ -11,6 +11,7 @@ const SelectInput = ({
     styles,
     title,
     white,
+    className
 }) => {
     return (
         <div style={styles} title={title}>
@@ -23,6 +24,7 @@ const SelectInput = ({
                 value={value}
                 isSearchable={false}
                 onChange={(val) => setValue(val)}
+                className={className}
                 styles={{
                     control: (baseStyles) => ({
                         ...baseStyles,
