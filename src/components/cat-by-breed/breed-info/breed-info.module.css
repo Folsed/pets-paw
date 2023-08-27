@@ -51,3 +51,10 @@
 .catProp {
     margin-top: 10px;
 }
+
+
+@media screen and (max-width: 428px) {
+    .catProperties {
+        flex-direction: column;
+    }
+}
