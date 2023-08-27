@@ -4,10 +4,8 @@ import BreedsScreen from '@/components/breeds/BreedsScreen'
 
 const BreedsPage = () => {
     return (
-        <div className={styles.container}>
-            <div className={styles.tools}>
-                <BreedsScreen/>
-            </div>
+        <div className={styles.tools}>
+            <BreedsScreen />
         </div>
     )
 }

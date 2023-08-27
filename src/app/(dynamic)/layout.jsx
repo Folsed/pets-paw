@@ -1,5 +1,5 @@
 import Interactions from '@/components/common/interactions/Interactions'
-import React from 'react'
+import styles from './layout.module.css'
 
 const DynamicLayout = ({ children }) => {
     return (
@@ -7,7 +7,7 @@ const DynamicLayout = ({ children }) => {
             <div className='interactions'>
                 <Interactions />
             </div>
-            {children}
+            <div className={styles.container}>{children}</div>
         </div>
     )
 }

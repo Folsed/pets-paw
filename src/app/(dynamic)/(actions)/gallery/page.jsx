@@ -11,7 +11,7 @@ const GalleryPage = () => {
     const searchParams = useSearchParams()
 
     return (
-        <div className={styles.container}>
+        <>
             <div className={styles.tools}>
                 <Backward to={'/'} />
                 <Link href={'?upload=active'} className={styles.uploadLink}>
@@ -26,7 +26,7 @@ const GalleryPage = () => {
                     <GalleryScreen />
                 )}
             </div>
-        </div>
+        </>
     )
 }
 

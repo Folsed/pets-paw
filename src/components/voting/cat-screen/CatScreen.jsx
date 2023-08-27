@@ -21,7 +21,7 @@ const CatScreen = ({ setUserLogs, userLogs }) => {
                     src={getCat?.data[0].url}
                     width={getCat.data[0].width}
                     height={getCat.data[0].height}
-                    quality={100}
+                    quality={75}
                 />
             </div>
             <CatActions

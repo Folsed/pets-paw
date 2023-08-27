@@ -10,13 +10,13 @@ const VotingPage = () => {
     const [userLogs, setUserLogs] = useState([])
 
     return (
-        <div className={styles.container}>
+        <>
             <LogsContext.Provider value={{ userLogs, setUserLogs }}>
                 <Backward to={'/'} />
                 <CatScreen />
                 <CatLogging />
             </LogsContext.Provider>
-        </div>
+        </>
     )
 }
 
