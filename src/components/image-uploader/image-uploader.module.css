@@ -20,6 +20,11 @@
     z-index: 1;
 }
 
+.fileUploader svg {
+    width: 200px;
+    height: 200px;
+}
+
 .uploaderIcon {
     position: absolute;
 }
@@ -37,4 +42,15 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 428px) {
+    .uploaderBox {
+        height: 167px;
+    }
+
+    .fileUploader svg {
+        width: 100px;
+        height: 100px;
+    }
 }

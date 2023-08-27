@@ -118,6 +118,15 @@ body[data-theme='dark'] .modalWindow {
     border-radius: 10px;
 }
 
-@media screen and (max-width: 375px) {
-    
+@media screen and (max-width: 428px) {
+    .modalWindow {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .heading h3 {
+        font-size: 20px;
+    }
 }
