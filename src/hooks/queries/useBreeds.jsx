@@ -1,5 +1,4 @@
 import axiosClient from '@/axios'
-import React from 'react'
 import { useQuery } from 'react-query'
 
 const useBreeds = (breed, limit) => {
@@ -20,6 +19,8 @@ const useBreeds = (breed, limit) => {
             enabled: !!breed,
         }
     )
+
+
 
     return { getBreeds, getCatsByBreed }
 }

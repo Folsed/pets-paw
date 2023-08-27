@@ -1,0 +1,33 @@
+.searchedContent {
+    display: grid;
+    gap: 20px;
+}
+
+.hiddenContent {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.textBox {
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    width: fit-content;
+    color: var(--inactive-font);
+    background-color: #ffffff;
+    padding: 7px 30px;
+    border-radius: 10px;
+}
+
+.isActive {
+    background-color: #ff878f99;
+    opacity: 1;
+}
