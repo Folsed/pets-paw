@@ -2,7 +2,7 @@
 
 Welcome to PetsPaw! This is a web application built using Next.js that allows users to explore various cat breeds, like or dislike them, add breeds to their favorites, upload pictures of cats, and manage their favorite lists.
 
-![Alt text](/petspaw.jpg 'Optional title')
+![Alt text](/public/petspaw.jpg 'Optional title')
 
 ## Features
 
