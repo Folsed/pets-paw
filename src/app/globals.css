@@ -16,6 +16,8 @@
     --active-button-color: #ff868e;
 
     --uploader-icon: #dadada;
+
+    --logo-text-color: #1d1d1d;
 }
 
 [data-theme='dark'] {
@@ -26,6 +28,7 @@
     --hover-button-color: #ff868e33;
     --active-button-color: #ff868e;
     --uploader-icon: #222222;
+    --logo-text-color: #ffffff;
 }
 
 *,

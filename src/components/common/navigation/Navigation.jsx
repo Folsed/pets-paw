@@ -50,8 +50,8 @@ const Navigation = () => {
         >
             <div className={styles.heading}>
                 <div className={styles.logo}>
-                    <LogoIcon />
-                    <LogoText />
+                    <LogoIcon/>
+                    <LogoText className={styles.logoText} />
                 </div>
                 <ThemeIndicator />
             </div>
