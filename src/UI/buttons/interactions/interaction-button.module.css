@@ -24,7 +24,8 @@
     background-color: var(--hover-button-color);
 }
 
-.container.bigButton:active {
+.container.bigButton:active,
+.bigButton.activeLink {
     background-color: var(--active-button-color);
     fill: var(--active-font);
 }

@@ -1,8 +1,9 @@
+import Likes from '@/components/interactions-content/likes/Likes'
 import React from 'react'
 
 const LikesPage = () => {
   return (
-    <div>page</div>
+    <Likes/>
   )
 }
 
