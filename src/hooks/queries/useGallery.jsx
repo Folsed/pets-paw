@@ -1,11 +1,10 @@
 import axiosClient from '@/axios'
-import React from 'react'
 import { useQuery } from 'react-query'
 
 const useGallery = () => {
     const searchParams = new URLSearchParams({
         has_breeds: 1,
-        limit: 20
+        limit: 20,
     })
 
     const getCats = useQuery(

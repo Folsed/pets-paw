@@ -20,8 +20,6 @@ const useBreeds = (breed, limit) => {
         }
     )
 
-
-
     return { getBreeds, getCatsByBreed }
 }
 

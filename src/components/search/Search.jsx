@@ -12,7 +12,7 @@ const Search = () => {
         router.push(`/search?q=${query}`)
     }
 
-    return <SearchInput value={query} setValue={setQuery} onSubmit={onSubmit}/>
+    return <SearchInput value={query} setValue={setQuery} onSubmit={onSubmit} />
 }
 
 export default Search

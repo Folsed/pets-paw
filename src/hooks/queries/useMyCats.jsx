@@ -1,5 +1,4 @@
 import axiosClient from '@/axios'
-import React from 'react'
 import { useMutation, useQuery } from 'react-query'
 import useVotingCats from './useVotingCats'
 

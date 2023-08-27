@@ -12,7 +12,7 @@ const InteractionButton = ({
     onClick,
     linkTo,
     type,
-    className
+    className,
 }) => {
     const pathname = usePathname()
     const isActive = pathname === linkTo
@@ -26,7 +26,9 @@ const InteractionButton = ({
         <ButtonComponent
             className={`${styles.container} ${
                 bigButton ? styles.bigButton : ''
-            } ${isActive ? styles.activeLink : ''} ${className ? className : ''}`}
+            } ${isActive ? styles.activeLink : ''} ${
+                className ? className : ''
+            }`}
             style={{
                 padding: `${padding}px`,
                 borderRadius: `${radius ? radius : 10}px`,

@@ -4,7 +4,6 @@
     gap: 5px;
 }
 
-
 .eye {
     width: 24px;
     height: 24px;
@@ -26,7 +25,7 @@
     padding: 0 5px;
 }
 .dot {
-    transition: transform .2s ease;
+    transition: transform 0.2s ease;
 }
 
 .night .dot {

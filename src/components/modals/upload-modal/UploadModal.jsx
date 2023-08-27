@@ -25,12 +25,10 @@ const UploadModal = () => {
     }
 
     useEffect(() => {
-        if(catUpload.status === 'success' || catUpload.status === 'error') {
+        if (catUpload.status === 'success' || catUpload.status === 'error') {
             setImage(null)
         }
-    
     }, [catUpload.status])
-    
 
     return (
         <div className={styles.container}>

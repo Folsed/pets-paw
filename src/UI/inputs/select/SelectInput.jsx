@@ -11,7 +11,7 @@ const SelectInput = ({
     styles,
     title,
     white,
-    className
+    className,
 }) => {
     return (
         <div style={styles} title={title}>

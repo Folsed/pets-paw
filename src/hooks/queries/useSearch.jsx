@@ -1,5 +1,4 @@
 import axiosClient from '@/axios'
-import React from 'react'
 import { useQuery } from 'react-query'
 
 const useSearch = (breed) => {
@@ -15,7 +14,7 @@ const useSearch = (breed) => {
         },
         {
             select: ({ data }) => data,
-            enabled: !!breed
+            enabled: !!breed,
         }
     )
 

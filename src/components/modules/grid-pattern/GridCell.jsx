@@ -1,6 +1,6 @@
 import styles from './grid-pattern.module.css'
 
-const GridCell = ({ children, onMouseEnter, onMouseLeave}) => {
+const GridCell = ({ children, onMouseEnter, onMouseLeave }) => {
     return (
         <div
             className={`${styles.gridCell}`}

@@ -3,8 +3,7 @@ import styles from './cat-logging.module.css'
 import LikeIcon from '@/assets/svgs/icons/like.svg'
 import HeartIcon from '@/assets/svgs/icons/heart.svg'
 import DislikeIcon from '@/assets/svgs/icons/dislike.svg'
-import useVotingCats from '@/hooks/queries/useVotingCats'
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import LogsContext from '@/providers/LogsProvider'
 
 const CatLogging = () => {

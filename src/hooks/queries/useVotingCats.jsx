@@ -1,15 +1,10 @@
 import axiosClient from '@/axios'
 import LogsContext from '@/providers/LogsProvider'
 import { useContext, useState } from 'react'
-import { useMutation, useQueries, useQuery } from 'react-query'
+import { useMutation, useQuery } from 'react-query'
 
 const useVotingCats = (image_id) => {
     const [favId, setFavId] = useState()
-    const { userLogs, setUserLogs } = useContext(LogsContext)
-
-    const hours = String(new Date().getHours()).padStart(2, '0')
-    const minutes = String(new Date().getMinutes()).padStart(2, '0')
-    const time = hours + ':' + minutes
 
     const getCat = useQuery(
         ['get-cat'],

@@ -2,9 +2,7 @@ import Likes from '@/components/interactions-content/likes/Likes'
 import React from 'react'
 
 const LikesPage = () => {
-  return (
-    <Likes/>
-  )
+    return <Likes />
 }
 
 export default LikesPage

@@ -40,7 +40,6 @@ const GalleryGrid = ({ cats, gridLimit, orderBy, breed, mime }) => {
         return <Loader size={50} withContainer />
     }
 
-
     return (
         <GridPattern>
             {sortedCats.map((item) => (
@@ -56,7 +55,10 @@ const GalleryGrid = ({ cats, gridLimit, orderBy, breed, mime }) => {
                         height={500}
                         title={item.breeds[0]?.name}
                     />
-                    <GalleryHoverMenu cellIsActive={cellIsActive} catId={item.id} />
+                    <GalleryHoverMenu
+                        cellIsActive={cellIsActive}
+                        catId={item.id}
+                    />
                 </GridCell>
             ))}
         </GridPattern>

@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef, useState, useCallback } from 'react'
+import { useRef, useState, useCallback } from 'react'
 import ImageUploaderIcon from '@/assets/svgs/icons/imageUploader.svg'
 import Image from 'next/image'
 import styles from './image-uploader.module.css'
@@ -24,7 +24,6 @@ const ImageUploader = ({ name, className, placeholder, image, setImage }) => {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
     })
-
 
     return (
         <div className={styles.uploaderBox}>
@@ -58,9 +57,7 @@ const ImageUploader = ({ name, className, placeholder, image, setImage }) => {
                         ) : (
                             <span>
                                 <strong>Drag here </strong>your file or{' '}
-                                <strong
-                                    className={styles.clickable}
-                                >
+                                <strong className={styles.clickable}>
                                     Click here{' '}
                                 </strong>{' '}
                                 to upload

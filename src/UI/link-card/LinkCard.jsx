@@ -23,7 +23,12 @@ const LinkCard = ({ props }) => {
                 />
             </div>
             <div>
-                <Link href={props.link} className={`${styles.cardLink} ${isActive ? styles.activeLink : ''}`} >
+                <Link
+                    href={props.link}
+                    className={`${styles.cardLink} ${
+                        isActive ? styles.activeLink : ''
+                    }`}
+                >
                     <span>{props.title}</span>
                 </Link>
             </div>

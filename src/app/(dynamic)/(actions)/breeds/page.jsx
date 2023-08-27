@@ -1,4 +1,3 @@
-import Backward from '@/components/modules/backward/Backward'
 import styles from './page.module.css'
 import BreedsScreen from '@/components/breeds/BreedsScreen'
 

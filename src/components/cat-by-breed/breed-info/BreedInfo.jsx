@@ -1,7 +1,6 @@
 import styles from './breed-info.module.css'
 
 const BreedInfo = ({ data }) => {
-    console.log(data)
     return (
         <div className={styles.container}>
             <div className={styles.heading}>

@@ -32,7 +32,6 @@
     margin-top: 10px;
 }
 
-
 .actions {
     display: flex;
     flex-direction: column;
@@ -43,12 +42,10 @@
     font-size: 20px;
 }
 
-
 .cards {
     display: flex;
     gap: 16px;
 }
-
 
 .inactive {
     display: none;
@@ -76,6 +73,4 @@
     .cards {
         flex-direction: column;
     }
-
-
 }

@@ -21,7 +21,7 @@
     object-fit: contain;
 }
 
-@media screen and (max-width: 428px){
+@media screen and (max-width: 428px) {
     .container {
         height: 190px;
     }

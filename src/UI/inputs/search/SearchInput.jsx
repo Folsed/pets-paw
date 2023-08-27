@@ -2,7 +2,7 @@ import InteractionButton from '@/UI/buttons/interactions/InteractionButton'
 import styles from './search-input.module.css'
 import SearchIcon from '@/assets/svgs/icons/search.svg'
 
-const SearchInput = ({onSubmit, value, setValue}) => {
+const SearchInput = ({ onSubmit, value, setValue }) => {
     const handleInputChange = (e) => {
         setValue(e.target.value)
     }
@@ -19,7 +19,7 @@ const SearchInput = ({onSubmit, value, setValue}) => {
                     placeholder='Search for breeds by name'
                 />
                 <InteractionButton
-                    icon={<SearchIcon/>}
+                    icon={<SearchIcon />}
                     size={20}
                     padding={10}
                     type={'submit'}

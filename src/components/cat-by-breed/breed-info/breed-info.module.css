@@ -1,6 +1,6 @@
 .container {
     margin-top: 51px;
-    border: 2px solid #FBE0DC;
+    border: 2px solid #fbe0dc;
     border-radius: var(--default-radius);
     width: 100%;
     padding: 26px 40px 40px 40px;
@@ -20,7 +20,6 @@
     padding: 5px 40px;
     background-color: var(--box-color);
     border-radius: var(--default-radius);
-
 }
 
 .catDescription {
@@ -52,4 +51,3 @@
 .catProp {
     margin-top: 10px;
 }
-

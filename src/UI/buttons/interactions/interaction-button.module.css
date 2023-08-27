@@ -1,7 +1,7 @@
 .container {
     background-color: var(--hover-button-color);
     fill: var(--inactive-font);
-    transition: background-color .2s ease, fill .2s ease;
+    transition: background-color 0.2s ease, fill 0.2s ease;
 }
 
 .container:hover {
@@ -14,9 +14,8 @@
     height: inherit;
 }
 
-.container.bigButton { 
+.container.bigButton {
     background-color: var(--default-button-color);
-
 }
 
 .container.bigButton:hover {

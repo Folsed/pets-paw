@@ -7,7 +7,7 @@ export default function Home() {
         <main className={styles.homePageWrapper}>
             <div className={styles.canvas}></div>
             <div className={styles.girlAndPet}>
-                <GirlAndPet/>
+                <GirlAndPet />
             </div>
         </main>
     )

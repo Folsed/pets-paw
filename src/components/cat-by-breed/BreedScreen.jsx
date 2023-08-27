@@ -7,7 +7,6 @@ import Loader from '@/UI/loaders/Loader'
 
 const BreedScreen = ({ breedId }) => {
     const { getCatsByBreed } = useBreeds(breedId, 5)
-    console.log(getCatsByBreed)
 
     if (getCatsByBreed.isLoading) {
         return (

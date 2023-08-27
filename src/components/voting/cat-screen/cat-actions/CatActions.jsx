@@ -85,7 +85,6 @@ const CatActions = ({ data }) => {
         favouritesDelete.isSuccess,
     ])
 
-
     return (
         <div className={styles.container}>
             <div className={styles.splitBlock}>

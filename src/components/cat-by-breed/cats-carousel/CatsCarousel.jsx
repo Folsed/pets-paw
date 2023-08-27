@@ -24,7 +24,6 @@ const CatsCarousel = ({ images }) => {
             </div>
         ),
     }
-    console.log(images)
 
     return (
         <div className={styles.catsCarousel}>
