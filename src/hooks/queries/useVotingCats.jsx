@@ -1,5 +1,4 @@
 import axiosClient from '@/axios'
-import LogsContext from '@/providers/LogsProvider'
 import { useContext, useState } from 'react'
 import { useMutation, useQuery } from 'react-query'
 

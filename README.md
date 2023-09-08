@@ -3,7 +3,7 @@
 
 Welcome to PetsPaw! This is a web application built using Next.js that allows users to explore various cat breeds, like or dislike them, add breeds to their favorites, upload pictures of cats, and manage their favorite lists.
 
-![Alt text](/public/petspaw.jpg 'Optional title')
+![Alt text](/public/petspaw.jpg 'PetsPaw Preview')
 
 ## Features
 
@@ -26,7 +26,7 @@ Before you begin, ensure you have the following installed:
 1. Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/pets-paw.git
+git clone https://github.com/folsed/pets-paw.git
 ```
 
 1. Navigate to the project directory:
